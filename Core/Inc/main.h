@@ -77,10 +77,6 @@ void Error_Handler(void);
 #define BOOT1_GPIO_Port GPIOB
 #define LR_Pin GPIO_PIN_11
 #define LR_GPIO_Port GPIOE
-#define MUTE_LED_Pin GPIO_PIN_12
-#define MUTE_LED_GPIO_Port GPIOE
-#define LINK_LED_Pin GPIO_PIN_13
-#define LINK_LED_GPIO_Port GPIOE
 #define CLK_IN_Pin GPIO_PIN_10
 #define CLK_IN_GPIO_Port GPIOB
 #define LD4_Pin GPIO_PIN_12
@@ -99,7 +95,10 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
-
+#define MUTE_LED_Pin LD5_Pin
+#define MUTE_LED_GPIO_Port LD5_GPIO_Port
+#define LINK_LED_Pin LD6_Pin
+#define LINK_LED_GPIO_Port LD6_GPIO_Port
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

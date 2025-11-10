@@ -13,7 +13,7 @@ extern "C" {
 #include "svc_glo.h"
 
 extern USBD_HandleTypeDef hUsbDeviceFS;
-extern I2S_HandleTypeDef hi2s1;
+extern I2S_HandleTypeDef hi2s2;
 }
 
 // include our classes

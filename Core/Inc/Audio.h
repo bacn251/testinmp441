@@ -86,7 +86,7 @@ inline int8_t Audio::start() {
 
   // HAL_I2S_Receive_DMA will multiply the size by 2 because the standard is 24 bit Philips.
 
-  if ((status = HAL_I2S_Receive_DMA(&hi2s1, (uint16_t*) _sampleBuffer, MIC_SAMPLES_PER_PACKET * 2)) == HAL_OK) {
+  if ((status = HAL_I2S_Receive_DMA(&hi2s2, (uint16_t*) _sampleBuffer, MIC_SAMPLES_PER_PACKET * 2)) == HAL_OK) {
     _running = true;
   }
 
@@ -101,7 +101,7 @@ inline int8_t Audio::stop() {
 
   HAL_StatusTypeDef status;
 
-  if ((status = HAL_I2S_DMAStop(&hi2s1)) == HAL_OK) {
+  if ((status = HAL_I2S_DMAStop(&hi2s2)) == HAL_OK) {
     _running = false;
   }
   return status;
@@ -115,7 +115,7 @@ inline int8_t Audio::pause() {
 
   HAL_StatusTypeDef status;
 
-  if ((status = HAL_I2S_DMAPause(&hi2s1)) == HAL_OK) {
+  if ((status = HAL_I2S_DMAPause(&hi2s2)) == HAL_OK) {
     _running = false;
   }
 
@@ -130,7 +130,7 @@ inline int8_t Audio::resume() {
 
   HAL_StatusTypeDef status;
 
-  if ((status = HAL_I2S_DMAResume(&hi2s1)) == HAL_OK) {
+  if ((status = HAL_I2S_DMAResume(&hi2s2)) == HAL_OK) {
     _running = true;
   }
   return status;

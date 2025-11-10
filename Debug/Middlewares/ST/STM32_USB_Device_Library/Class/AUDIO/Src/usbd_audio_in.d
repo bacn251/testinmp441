@@ -1,5 +1,13 @@
-USB_DEVICE/App/usb_device.o: ../USB_DEVICE/App/usb_device.c \
- ../USB_DEVICE/App/usb_device.h \
+Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.o: \
+ ../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.c \
+ ../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc/usbd_audio_in.h \
+ ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ ../USB_DEVICE/Target/usbd_conf.h ../Core/Inc/main.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+ ../Core/Inc/stm32f4xx_hal_conf.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -8,10 +16,6 @@ USB_DEVICE/App/usb_device.o: ../USB_DEVICE/App/usb_device.c \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
- ../Core/Inc/stm32f4xx_hal_conf.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
@@ -32,18 +36,23 @@ USB_DEVICE/App/usb_device.o: ../USB_DEVICE/App/usb_device.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- ../USB_DEVICE/Target/usbd_conf.h ../Core/Inc/main.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
  ../USB_DEVICE/App/usbd_desc.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc/usbd_audio_in.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- ../USB_DEVICE/App/usbd_audio_if.h
-../USB_DEVICE/App/usb_device.h:
+ ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
+ C:/Users/Bacnk/Documents/CODE_MCU_git/testinmp441/Middlewares/ST/STM32_Audio/Addons/GREQ/Inc/greq_glo.h \
+ C:/Users/Bacnk/Documents/CODE_MCU_git/testinmp441/Middlewares/ST/STM32_Audio/Addons/Common/Inc/audio_fw_glo.h
+../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc/usbd_audio_in.h:
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+../USB_DEVICE/Target/usbd_conf.h:
+../Core/Inc/main.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
+../Core/Inc/stm32f4xx_hal_conf.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -52,10 +61,6 @@ USB_DEVICE/App/usb_device.o: ../USB_DEVICE/App/usb_device.c \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
-../Core/Inc/stm32f4xx_hal_conf.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
@@ -76,15 +81,11 @@ USB_DEVICE/App/usb_device.o: ../USB_DEVICE/App/usb_device.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-../USB_DEVICE/Target/usbd_conf.h:
-../Core/Inc/main.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 ../USB_DEVICE/App/usbd_desc.h:
-../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc/usbd_audio_in.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-../USB_DEVICE/App/usbd_audio_if.h:
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+C:/Users/Bacnk/Documents/CODE_MCU_git/testinmp441/Middlewares/ST/STM32_Audio/Addons/GREQ/Inc/greq_glo.h:
+C:/Users/Bacnk/Documents/CODE_MCU_git/testinmp441/Middlewares/ST/STM32_Audio/Addons/Common/Inc/audio_fw_glo.h:

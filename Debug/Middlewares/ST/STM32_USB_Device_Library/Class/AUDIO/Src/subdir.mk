@@ -5,13 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.c 
+../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.c 
 
 C_DEPS += \
-./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.d 
+./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.d 
 
 OBJS += \
-./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.o 
+./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +21,7 @@ Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/%.o Middlewares/ST/STM32
 clean: clean-Middlewares-2f-ST-2f-STM32_USB_Device_Library-2f-Class-2f-AUDIO-2f-Src
 
 clean-Middlewares-2f-ST-2f-STM32_USB_Device_Library-2f-Class-2f-AUDIO-2f-Src:
-	-$(RM) ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.cyclo ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.d ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.o ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.su
+	-$(RM) ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.cyclo ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.d ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.o ./Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio_in.su
 
 .PHONY: clean-Middlewares-2f-ST-2f-STM32_USB_Device_Library-2f-Class-2f-AUDIO-2f-Src
 

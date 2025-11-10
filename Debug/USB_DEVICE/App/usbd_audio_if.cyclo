@@ -1,9 +1,25 @@
-../USB_DEVICE/App/usbd_audio_if.c:153:15:AUDIO_Init_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:168:15:AUDIO_DeInit_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:183:15:AUDIO_AudioCmd_FS	2
-../USB_DEVICE/App/usbd_audio_if.c:206:15:AUDIO_VolumeCtl_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:219:15:AUDIO_MuteCtl_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:232:15:AUDIO_PeriodicTC_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:246:15:AUDIO_GetState_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:257:6:TransferComplete_CallBack_FS	1
-../USB_DEVICE/App/usbd_audio_if.c:268:6:HalfTransfer_CallBack_FS	1
+../Core/Inc/MuteButton.h:63:13:bool MuteButton::isMuted() const	1
+../Core/Inc/VolumeControl.h:91:13:void VolumeControl::setVolume(int16_t)	2
+../Core/Inc/VolumeControl.h:105:13:void VolumeControl::setMute(bool)	3
+../Core/Inc/VolumeControl.h:119:13:bool VolumeControl::isMuted() const	1
+../Core/Inc/VolumeControl.h:127:13:void VolumeControl::process(int16_t*, int32_t)	2
+../Core/Inc/GraphicEqualizer.h:115:13:void GraphicEqualizer::process(int16_t*, int32_t)	2
+../Core/Inc/Audio.h:83:15:int8_t Audio::start()	2
+../Core/Inc/Audio.h:100:15:int8_t Audio::stop()	2
+../Core/Inc/Audio.h:114:15:int8_t Audio::pause()	2
+../Core/Inc/Audio.h:129:15:int8_t Audio::resume()	2
+../Core/Inc/Audio.h:151:13:void Audio::setVolume(int16_t)	4
+../Core/Inc/Audio.h:185:13:void Audio::sendData(volatile int32_t*, int16_t*)	9
+../Core/Inc/Audio.h:267:13:void Audio::i2s_halfComplete()	1
+../Core/Inc/Audio.h:276:13:void Audio::i2s_complete()	1
+../USB_DEVICE/App/usbd_audio_if.cpp:24:15:int8_t Audio_Init(uint32_t, uint32_t, uint32_t)	1
+../USB_DEVICE/App/usbd_audio_if.cpp:35:15:int8_t Audio_DeInit(uint32_t)	1
+../USB_DEVICE/App/usbd_audio_if.cpp:44:15:int8_t Audio_Record()	1
+../USB_DEVICE/App/usbd_audio_if.cpp:54:15:int8_t Audio_VolumeCtl(int16_t)	1
+../USB_DEVICE/App/usbd_audio_if.cpp:65:15:int8_t Audio_MuteCtl(uint8_t)	1
+../USB_DEVICE/App/usbd_audio_if.cpp:75:15:int8_t Audio_Stop()	1
+../USB_DEVICE/App/usbd_audio_if.cpp:85:15:int8_t Audio_Pause()	1
+../USB_DEVICE/App/usbd_audio_if.cpp:95:15:int8_t Audio_Resume()	1
+../USB_DEVICE/App/usbd_audio_if.cpp:105:15:int8_t Audio_CommandMgr(uint8_t)	1
+../USB_DEVICE/App/usbd_audio_if.cpp:115:6:void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef*)	1
+../USB_DEVICE/App/usbd_audio_if.cpp:119:6:void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef*)	1

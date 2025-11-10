@@ -24,7 +24,7 @@
 #include "usbd_def.h"
 #include "usbd_core.h"
 
-#include "usbd_audio.h"
+#include "usbd_audio_in.h"
 
 /* USER CODE BEGIN Includes */
 
