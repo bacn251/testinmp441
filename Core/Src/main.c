@@ -45,7 +45,7 @@ I2S_HandleTypeDef hi2s2;
 DMA_HandleTypeDef hdma_spi2_rx;
 
 /* USER CODE BEGIN PV */
-
+extern void myMain();
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,7 +70,11 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+#ifdef SEMIHOSTING
+  extern void initialise_monitor_handles(void);
+  initialise_monitor_handles();
+  setbuf(stdout, NULL);
+#endif
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -95,17 +99,17 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_I2S2_Init();
   /* USER CODE BEGIN 2 */
-
+  myMain();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-  }
+//  while (1)
+//  {
+//    /* USER CODE END WHILE */
+//
+//    /* USER CODE BEGIN 3 */
+//  }
   /* USER CODE END 3 */
 }
 
@@ -228,7 +232,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(OTG_FS_PowerSwitchOn_GPIO_Port, OTG_FS_PowerSwitchOn_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, MUTE_LED_Pin|LINK_LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, LR_Pin|MUTE_LED_Pin|LINK_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, LD4_Pin|LD3_Pin|LD5_Pin|LD6_Pin, GPIO_PIN_RESET);
@@ -264,8 +268,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BOOT1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MUTE_LED_Pin LINK_LED_Pin */
-  GPIO_InitStruct.Pin = MUTE_LED_Pin|LINK_LED_Pin;
+  /*Configure GPIO pins : LR_Pin MUTE_LED_Pin LINK_LED_Pin */
+  GPIO_InitStruct.Pin = LR_Pin|MUTE_LED_Pin|LINK_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -284,7 +288,24 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+__attribute__((optimize("O0"))) void Error_Handler() {
 
+  __disable_irq();
+
+  /* Flash the LINK LED at 1Hz if there's a fatal error */
+
+  for (;;) {
+    HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
+    for (uint32_t i = 0; i < 1000000; i++)
+      ;
+    HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
+    for (uint32_t i = 0; i < 1000000; i++)
+      ;
+  }
+}
+void HAL_I2S_ErrorCallback(I2S_HandleTypeDef *hi2s) {
+  Error_Handler();
+}
 /* USER CODE END 4 */
 
 /**
@@ -313,16 +334,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
-void Error_Handler(void)
-{
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
-  /* USER CODE END Error_Handler_Debug */
-}
+//void Error_Handler(void)
+//{
+//  /* USER CODE BEGIN Error_Handler_Debug */
+//  /* User can add his own implementation to report the HAL error return state */
+//  __disable_irq();
+//  while (1)
+//  {
+//  }
+//  /* USER CODE END Error_Handler_Debug */
+//}
 #ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number

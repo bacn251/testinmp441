@@ -8,7 +8,7 @@
 
 struct LiveLed: Led {
     LiveLed() :
-        Led(GpioPin(LIVE_LED_GPIO_Port, LIVE_LED_Pin)) {
+        Led(GpioPin(LD3_GPIO_Port, LD3_Pin)) {
 
       off();
     }

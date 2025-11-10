@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define MUTE_GPIO_Port GPIOA
 #define BOOT1_Pin GPIO_PIN_2
 #define BOOT1_GPIO_Port GPIOB
+#define LR_Pin GPIO_PIN_11
+#define LR_GPIO_Port GPIOE
 #define MUTE_LED_Pin GPIO_PIN_12
 #define MUTE_LED_GPIO_Port GPIOE
 #define LINK_LED_Pin GPIO_PIN_13
